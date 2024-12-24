@@ -1,20 +1,22 @@
 const box = document.getElementById('box')
 let moleTile;
+let image;
+let score = 0;
 
 window.onload = () => {
 
-    score = 0
     initialize();   
     setInterval(showMole, 2000)
 
 }
 
-const clickEvent = () => {
+const clickEvent = (e) => {
 
-    console.log(this.tile.id, moleTile)
+    console.log("e target: ", e.target)
+    console.log("moletile: ", image)
 
-    if (this.tile == moleTile) {
-        this.tile.innerHTML = ''
+    if (e.target == image) {
+        e.target.src = ''
         score += 1
         const sc = document.getElementById('score')
         sc.innerText = `SCORE: ${score}`
@@ -41,7 +43,7 @@ function showMole() {
     mole.height = 80
     tile.append(mole)
     moleTile = tile
-
+    image = mole
 }
 
 
