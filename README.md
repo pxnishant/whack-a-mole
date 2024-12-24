@@ -1,0 +1,1 @@
+A simple whack-a-mole game.
